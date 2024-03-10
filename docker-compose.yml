@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  semantic-search-backend:
+    container_name: semantic-search-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    logging:
+      driver: json-file
+      options:
+        max-size: '1m'
+        max-file: '1'
+    volumes:
+      - './app:/app'
+    env_file:
+      - ./.env
+    environment:
+      PYTHONUNBUFFERED: '1'
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
