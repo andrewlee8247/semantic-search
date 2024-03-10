@@ -1,9 +1,6 @@
 import logging
 import sys
 from typing import List
-import boto3
-import json
-import base64
 
 from loguru import logger
 from starlette.config import Config
@@ -23,7 +20,7 @@ EMBEDDING_MODEL: str = config("EMBEDDING_MODEL",
 OPENAI_MODEL: str = config("OPENAI_MODEL", default="gpt-3.5-turbo")
 PROJECT_NAME: str = config("PROJECT_NAME",
                            default="Semantic Search API")
-CONTENT_PATH: str = config("CONTENT_PATH", default="../../content") # TODO: change to s3 bucket
+CONTENT_DIR: str = config("CONTENT_DIR", default="content")  # TODO: change to s3 bucket
 
 ALLOWED_HOSTS: List[str] = config(
     "ALLOWED_HOSTS",

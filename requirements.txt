@@ -1,3 +1,4 @@
+boto3==1.20.14
 openai==1.13.3
 langchain==0.1.11
 langchain-openai==0.0.8
