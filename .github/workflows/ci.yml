@@ -34,5 +34,5 @@ jobs:
       env:
         OPEN_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        echo $OPEN_API_KEY
+        echo ${{ secrets.OPENAI_API_KEY }}
         pytest
