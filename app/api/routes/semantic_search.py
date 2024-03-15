@@ -9,7 +9,7 @@ from app.models.llm import chain
 router = APIRouter()
 
 
-@router.get(
+@router.post(
     path="",
     response_model=QueryReturn,
     name="Semantic Document Search",
